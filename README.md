@@ -1,25 +1,14 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # backwatertruth
+
+This is a cool site for me to make some $ as well as read some crazy conspiracy/horror stories
+
+## Basics:
+
+* Ruby Version: 3.1.2
+* System dependencies: `bundle install`
+* Configuration: none
+* Database creation: `rails g scaffold posts title:string content:text anonymous:boolean graphic:boolean`
+* Database initialization: `rails db:migrate`
+* How to run the test suite: no tests so far
+* Services (job queues, cache servers, search engines, etc.): none
+* Deployment instructions: none so far
