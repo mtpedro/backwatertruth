@@ -1,0 +1,135 @@
+.card {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+
+    flex-basis: calc(50% - 30px);
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-width: calc(40%);
+}
+
+#card-text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.button_plus {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    cursor: pointer;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+
+    top: 70px;
+    right: 15px;
+  }
+  
+  .button_plus:after {
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 4px;
+    width: 50%;
+    background: #007bff;
+    top: 50%;
+    left: 50%;
+  }
+  
+  .button_plus:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #007bff;
+    height: 50%;
+    width: 4px;
+  }
+  
+  .button_plus:hover:before,
+  .button_plus:hover:after {
+    background: #fff;
+    transition: 0.2s;
+  }
+  
+  .button_plus:hover {
+    background-color: #007bff;
+    transition: 0.2s;
+  }
+
+  .user-tag {
+    position: absolute;
+    left: 8px;
+    top: 0px;
+  }
+
+  .savebtn {
+    position: relative;
+    margin-top: 60px;
+  }
+
+  .anonymous {
+    position: absolute;
+    left: 20px;
+  }
+
+  .anonymous-txt {
+    position: absolute;
+    left: 40px;
+    margin-top: -7px;
+    color: #8D9797;
+  }
+
+  .graphic {
+    position: absolute;
+    margin-top: 25px;
+    left: 20px;
+  }
+
+  .graphic-txt {
+    position: absolute;
+    left: 40px;
+    margin-top: 20px;
+    color: #8D9797;
+  }
+
+  .button_to {
+    display: inline-block;
+  }
+
+  .dot {
+    height: 10px;
+    width: 10px;
+    background-color: orangered;
+    border-radius: 50%;
+    display: inline-block;
+
+    position: absolute;
+    top: 7px;
+    right: 7px;
+  }
+  
+  /* Tooltip text */
+  .dot .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #4E545C;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .dot:hover .tooltiptext {
+    visibility: visible;
+  }

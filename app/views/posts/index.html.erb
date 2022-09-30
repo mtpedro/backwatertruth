@@ -1,0 +1,21 @@
+<div id="posts">
+  <% @posts.each do |post| %>
+    <div class="card w-50 text-center text-white", style="background-color: #000000">
+      <div class="card-body">
+        <% if post.anonymous == true %>
+          <em class="user-tag" style="color: #8D9797" >anonymous</em>
+        <% end %>
+        <% if post.graphic == true %>
+          <div class="dot">
+            <span class="tooltiptext">Violent or gory post</span>
+          </div>
+        <% end %>
+        <h5 class="card-title"><%= post.title %></h5>
+        <p class="card-text" id="card-text" ><%= post.content %></p>
+        <%= link_to 'Read', post, class:"btn btn-outline-primary my-2 my-sm-0" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "", new_post_path, class:"button_plus" %>
