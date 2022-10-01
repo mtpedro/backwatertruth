@@ -68,36 +68,6 @@
     top: 0px;
   }
 
-  .savebtn {
-    position: relative;
-    margin-top: 60px;
-  }
-
-  .anonymous {
-    position: absolute;
-    left: 20px;
-  }
-
-  .anonymous-txt {
-    position: absolute;
-    left: 40px;
-    margin-top: -7px;
-    color: #8D9797;
-  }
-
-  .graphic {
-    position: absolute;
-    margin-top: 25px;
-    left: 20px;
-  }
-
-  .graphic-txt {
-    position: absolute;
-    left: 40px;
-    margin-top: 20px;
-    color: #8D9797;
-  }
-
   .button_to {
     display: inline-block;
   }

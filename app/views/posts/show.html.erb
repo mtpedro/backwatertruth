@@ -5,7 +5,7 @@
           <em class="user-tag" style="color: #8D9797" >anonymous</em>
         <% end %>
         <h5 class="card-title"><%= @post.title %></h5>
-        <p class="card-text"><%= @post.content %></p>
+        <p class="card-text"><%= simple_format(@post.content) %></p>
         <%= link_to "Back", posts_path, class:"btn btn-outline-primary my-2 my-sm-0" %>
 
         
