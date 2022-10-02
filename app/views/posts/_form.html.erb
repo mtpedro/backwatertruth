@@ -31,16 +31,13 @@
               <%= form.check_box :graphic, class:"custom-control-input graphic", id:"graphicSwitch"%>
               <label class="custom-control-label" for="graphicSwitch">Graphic (gore/violence)</label>
             </div>
+            <!-- I opted to submit the user_id within the create method in the post controller
+                so that one cannot use inspect element to bypass restrictions -->
+            <!--<div class="form-group" > 
+              <%= form.number_field :user_id, id: :post_user_id, value:current_user.id, type: :hidden  %>
+            </div>-->
             <br/>
             <br/>
-
-            <!--
-            <div class="form-group" >
-              <%= form.check_box :anonymous, class:"anonymous" %><em class="anonymous-txt">anonymous</em>
-            </div>
-            <div>
-              <%= form.check_box :graphic, class:"graphic" %><em class="graphic-txt">graphic (violent, gore ect...)</em>
-            </div> -->
             <div>
               <%= form.submit "Save", class:"btn btn-outline-primary savebtn" %>
               <%= link_to 'Back', root_path, class:"btn btn-outline-primary savebtn" %>

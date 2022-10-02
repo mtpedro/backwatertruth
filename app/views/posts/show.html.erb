@@ -3,17 +3,31 @@
       <div class="card-body">
         <% if @post.anonymous == true %>
           <em class="user-tag" style="color: #8D9797" >anonymous</em>
+        <% else %>
+          <% u = User.find(@post.user_id) %>
+          <% if u == nil %>
+            <em class="user-tag" style="color: #8D9797">[ deleted ]</em>
+          <% else %>
+            <em class="user-tag" style="color: #8D9797"><%= u.name %></em>
+          <% end %>
+        <% end %>
+        <% if @post.graphic == true %>
+          <div class="dot">
+            <span class="tooltiptext">Violent or gory post</span>
+          </div>
         <% end %>
         <h5 class="card-title text-center "><%= @post.title %></h5>
         <p class="card-text"><%= simple_format(@post.content) %></p>
         <div class="text-center">
           <%= link_to "Back", posts_path, class:"btn btn-outline-primary my-2 my-sm-0" %>
-          <br/>
-          <br/>
-          <a href="<%= edit_post_path(@post) %>"><button class="button_to btn btn-outline-warning my-2 my-sm-0"  >Edit</button></a>
-          <form method="delete" action="<%= @post %>" class="button_to" >
+          <% if @post.user == current_user  %>
+            <br/>
+            <br/>
+            <a href="<%= edit_post_path(@post) %>"><button class="button_to btn btn-outline-warning my-2 my-sm-0"  >Edit</button></a>
+            <form method="delete" action="<%= @post %>" class="button_to" >
               <div><input value="Delete" type="submit" class="btn btn-outline-danger my-2 my-sm-0"/></div>
-          </form>
+            </form>
+          <% end %>
         </div>
       </div>
     </div>

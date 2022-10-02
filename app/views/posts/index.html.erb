@@ -4,6 +4,8 @@
       <div class="card-body">
         <% if post.anonymous == true %>
           <em class="user-tag" style="color: #8D9797" >anonymous</em>
+        <% else %>
+          <em class="user-tag" style="color: #8D9797"><%= User.find(post.user_id).name %></em>
         <% end %>
         <% if post.graphic == true %>
           <div class="dot">
