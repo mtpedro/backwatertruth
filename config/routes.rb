@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'home/_header'
+  get 'home/about'
+  get 'home/profile'
   devise_for :users
 
   devise_scope :user do  
@@ -8,7 +11,7 @@ Rails.application.routes.draw do
   resources :posts
 
   get 'home/about'
-  get 'home/_header'
+  get 'home/profile'
 
   root "posts#index"
 end

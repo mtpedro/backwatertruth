@@ -1,0 +1,34 @@
+<div id="edit">
+    <div class="card float-left" style="width: 18rem; position: absolute;">
+        <div class="card-body">
+            <h5 class="card-title"><%= @username %></h5>
+            <h6 class="card-text text-muted"><%= @postcount %> Post<% if @postcount != 1 %>s<% end %></h6>
+            <%= link_to "Back", :back, class:"card-link" %>
+            <%= link_to "Edit", edit_user_registration_path, class:"card-link" %>
+        </div>
+    </div>
+</div>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <div class="card w-50 text-center text-white", style="background-color: #000000">
+      <div class="card-body">
+        <% if post.anonymous == true %>
+          <em class="user-tag" style="color: #8D9797" >anonymous</em>
+        <% else %>
+          <em class="user-tag" style="color: #8D9797"><%= User.find(post.user_id).name %></em>
+        <% end %>
+        <% if post.graphic == true %>
+          <div class="dot">
+            <span class="tooltiptext">Violent or gory post</span>
+          </div>
+        <% end %>
+        <h5 class="card-title"><%= post.title %></h5>
+        <p class="card-text" id="card-text" ><%= post.content %></p>
+        <%= link_to 'Read', post, class:"btn btn-outline-primary my-2 my-sm-0" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "", new_post_path, class:"button_plus" %>
